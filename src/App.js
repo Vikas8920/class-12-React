@@ -1,42 +1,31 @@
-// import React from 'react'
-// import './heading.css'
-// import HelloWorld from './Component/HelloWorld'
-
-// const App = () => {
-//   const x = 5
-//   // let text = 'Good bye'
-
-//   // if(x<10){
-//   //   text = 'Hello React'
-//   // }
-//   return (
-//     <>
-//       <h1 className='heading'>React is {5 + 5} times better with JSX</h1>
-//       <h1>Hello</h1>
-//      <img src='' alt='name'/>
-//      <br/>
-//      <hr/>
-//      <h1>{(x)<10?'Hello React':'Good bye'}</h1>
-//      <hr/>
-//      <HelloWorld name='Vikas'/>
-//      <HelloWorld name='Aditya'/>
-     
-//     </>
-//   )
-// }
-
-// export default App
-
 import React, { Component } from 'react'
 import Greeting from './Component/Greeting'
+import Counter from './Component/Counter'
+import Logger from './Component/Logger'
+import Counter2 from './Component/Counter2'
+import Button from './Component/Button'
+import Garrage from './Component/Garrage'
 
 export default class App extends Component {
   render() {
     return (
       <>
         <Greeting name='Vikas'/>
+        <hr/>
+        <Counter/>
+        <hr/>
+        <Logger/>
+        <hr/>
+        <Counter2/>
+        <hr/>
+        <Button name='Submit'/>
+        <Button name='Click me'/>
+        <hr/>
+        <Garrage/>
       </>
     )
   }
 }
+
+
 
