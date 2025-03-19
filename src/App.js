@@ -1,35 +1,23 @@
-import React from 'react'
-import Football from './Component/Football'
-import KeyPress from './Component/KeyPress'
-import Garrage from './Component/Garrage'
+import React, { useState } from 'react'
 import Form from './Component/Form'
-import MultipleInput from './Component/MultipleInput'
-import TextArea from './Component/TextArea'
-import Select from './Component/Select'
-import RadioButton from './Component/RadioButton'
-import Checkboxes from './Component/Checkboxes'
+import Display from './Component/Display'
+import ParentComponent from './Component/ParentComponent'
 
 const App = () => {
+  const [formData, setFormData] = useState(null)
+
+  const handleFormSubmit = (data) =>{
+    setFormData(data)
+  }
   return (
-    <div>
-      <Football/>
+    <>
+      <Form onFormSubmit={handleFormSubmit}/>
+      {formData && <Display data={formData}/>}
+      {/* if formdata exists, render the display component */}
+
       <hr/>
-      <KeyPress/>
-      <hr/>
-      <Garrage/>
-      <hr/>
-      <Form/>
-      <hr/>
-      <MultipleInput/>
-      <hr/>
-      <TextArea/>
-      <hr/>
-      <Select/>
-      <hr/>
-      <RadioButton/>
-      <hr/>
-      <Checkboxes/>
-    </div>
+      <ParentComponent/>
+    </>
   )
 }
 

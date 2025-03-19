@@ -1,18 +1,33 @@
 import React, { useState } from 'react'
 
-const Form = () => {
+const Form = ({onFormSubmit}) => {
     const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [phone, setPhone] = useState('')
+
     const handleSubmit = (e) =>{
         e.preventDefault()
-        alert(`The name you entered is: ${name}`)
-        setName(e.target.value = '')
+        onFormSubmit({name, email, phone})
+
     }
   return (
     <>
-      <form action='' method='post' onSubmit={handleSubmit}>
-        <label htmlFor='name'>Enter your name:</label>
-        <input type='text' placeholder='Your Name' id='name' value={name} onChange={(e)=>setName(e.target.value)} />
-        <button type='submit'>Submit</button>
+      <form onSubmit={handleSubmit}>
+        <div>
+            <label htmlFor='name'>Name:</label>
+            <input type='text' value={name} onChange={(e)=>setName(e.target.value)} required id='name'/>
+        </div>
+        <div>
+            <label htmlFor='email'>Email:</label>
+            <input type='email' value={email} onChange={(e)=>setEmail(e.target.value)} required id='email'/>
+        </div>
+        <div>
+            <label htmlFor='phone'>Phone:</label>
+            <input type='tel' value={phone} onChange={(e)=>setPhone(e.target.value)} required id='phone'/>
+        </div>
+        <div>
+            <button type='submit'>Submit</button>
+        </div>
       </form>
     </>
   )
