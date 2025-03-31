@@ -1,23 +1,14 @@
 import React from 'react'
-import UseRefHook from './Component/UseRefHook'
-import Counter from './Component/Counter'
-import AuthProvider from './Context/AuthProvider'
-import Login from './Component/Login'
-import UserProfile from './Component/UserProfile'
+import ThemeProvider from './Context/ThemeProvider'
+import ThemeToggle from './Component/ThemeToggle'
 
 const App = () => {
- 
   return (
     <>
-     <UseRefHook/>
-     <hr/>
-     <Counter/>
-     <hr/>
-     <AuthProvider>
-      <h1>Simple Authentication System</h1>
-      <Login />
-      <UserProfile/>
-     </AuthProvider>
+      <ThemeProvider>
+        <h1>Theme Toggle</h1>
+        <ThemeToggle/>
+      </ThemeProvider>
     </>
   )
 }
