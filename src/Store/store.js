@@ -1,13 +1,8 @@
-import { combineReducers, createStore } from "redux";
-import authReducer from "./authReducer";
-import themeReducer from "./themeReducer";
+import { configureStore } from "@reduxjs/toolkit";
+import addToCartReducer from "./addToCart";
 
-
-const rootReducer = combineReducers({
-     auth: authReducer,
-     theme: themeReducer
+export default configureStore({
+    reducer:{
+      cart: addToCartReducer
+    }
 })
-
-const store = createStore(rootReducer)
-
-export default store
